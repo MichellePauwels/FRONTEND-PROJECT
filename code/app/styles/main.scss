@@ -1,0 +1,416 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+//@include font-face(Jaldi, fonts/Jaldi-Regular);
+//@include font-face(Gill-sans, fonts/GillSans);
+
+//768, 736, 667, 568
+
+/* GENERAL ELEMENTS */
+body
+{
+  font-family: "Jaldi-regular";
+  font-size: 16px;
+  color: $main-font-color;
+
+  h2
+  {
+    font-family: sans-serif; /* bij gebrek aan Gill-Sans */
+    color: #fff;
+    font-size: 39px;
+  }
+
+  p, a
+  {
+    color: #fff;
+  }
+
+  header
+  {
+    margin: 66px 0 0 0;
+
+    p
+    {
+      margin: 0 0 25px 0;
+      font-size: 18px;
+    }
+  }
+
+  main
+  {
+    background-color: $main-background-color;
+
+    h1
+    {
+      color: #fff;
+      background-color: $main-color;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    h2
+    {
+      text-transform: uppercase;
+      color: $main-color;
+      font-size: 23px;
+    }
+
+    h3
+    {
+      margin: 32px 0;
+      font-family: sans-serif;
+    }
+
+    p
+    {
+      color: $main-font-color;
+      margin: 22px 0;
+      font-family: sans-serif;
+    }
+
+    a
+    {
+      color: $main-color;
+    }
+
+    form
+    {
+      margin: 50px 0 0 0;
+    }
+  }
+
+  footer
+  {
+    margin: 20px 0 0 0;
+  }
+}
+
+
+/* CLASSES BOOTSTRAP */
+.container
+{
+  text-align: center;
+}
+
+.btn-default
+{
+  color: #fff;
+  background-color: $highlight-color;
+  border: 0;
+  margin: 0 10px 20px 0;
+  font-size: 16px;
+
+  &:hover
+  {
+    color: #fff;
+    background-color: $btn-hover-color;
+    border: 0;
+  }
+}
+
+.container
+{
+  iframe
+  {
+    @media(min-width: 736px)
+    {
+      margin: -200px 0 80px 0;
+    }
+
+    @media(max-width: 736px)
+    {
+      margin: -100px 0 80px 0;
+    }
+
+    border: solid 7px $border-color;
+
+    @media(min-width: 736px)
+    {
+      width: 720px;
+      height: 404px;
+    }
+
+    @media(max-width: 736px)
+    {
+      width: 367px;
+      height: 206px;
+    }
+  }
+}
+
+.glyphicon
+{
+  font-size: 24px;
+}
+
+/* CLASSES OWN */
+.header-home
+{
+  background: url('../../../app/images/header-pattern.jpg') center top repeat;
+
+  @media(min-width: 736px)
+  {
+    padding: 20px 0 330px 0;
+  }
+
+  @media(max-width: 736px)
+  {
+    padding: 20px 0 160px 0;
+  }
+
+  .navbar
+  {
+    font-family: "Jaldi-regular";
+    font-size: 20px;
+
+    //regular screen
+    @media(min-width: 768px)
+    {
+      ul
+      {
+        width: 100%;
+
+        li
+        {
+          width: 20%;
+
+          a
+          {
+            color: #fff;
+
+            &:hover, &:focus
+            {
+              text-decoration: none;
+              background: transparent url('../../../app/images/nav-hover.png') center top no-repeat 25px;
+            }
+          }
+        }
+      }
+    }
+
+    //tablet screen
+    @media(min-width: 568px) and (max-width: 768px)
+    {
+      ul
+      {
+        width: 95%;
+
+        li
+        {
+          display:inline-block;
+          width: 19%;
+
+          a
+          {
+            color: #fff;
+
+            &:hover, &:focus
+            {
+              text-decoration: none;
+              background: transparent url('../../../app/images/nav-hover.png') center top no-repeat 25px;
+            }
+          }
+        }
+      }
+    }
+
+    //mobile screen
+    @media(max-width: 568px)
+    {
+      ul
+      {
+        li
+        {
+          margin: 25px 0 0 0;
+
+          a
+          {
+            color: #fff;
+
+            &:hover, &:focus
+            {
+              text-decoration: none;
+              background: transparent url('../../../app/images/nav-hover.png') center top no-repeat 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar-brand
+{
+  img
+  {
+    @media(max-width: 883px)
+    {
+      visibility: hidden;
+    }
+
+    @media(min-width: 883px)
+    {
+      visibility: visible;
+      margin: 25px 5px 600px -73px;
+    }
+  }
+}
+
+.header-other
+{
+  background: transparent;
+
+  .navbar
+  {
+    font-family: "Jaldi-regular";
+    font-size: 20px;
+
+    @media(min-width: 768px)
+    {
+      margin: -30px 0 -100px 0;
+
+      ul
+      {
+        width: 100%;
+
+        li
+        {
+          width: 20%;
+
+          a
+          {
+            color: $main-color;
+
+            &:hover, &:focus
+            {
+              text-decoration: none;
+              background: transparent url('../../../app/images/nav-hover.png') center top no-repeat 25px;
+            }
+          }
+        }
+      }
+    }
+
+    @media(min-width: 568px) and (max-width: 768px)
+    {
+      margin: -30px 0 -70px 0;
+
+      ul
+      {
+        width: 95%;
+
+        li
+        {
+          display: inline-block;
+          width: 19%;
+
+          a
+          {
+            color: $main-color;
+
+            &:hover, &:focus
+            {
+              text-decoration: none;
+              background: transparent url('../../../app/images/nav-hover.png') center top no-repeat 25px;
+            }
+          }
+        }
+      }
+    }
+
+    @media(max-width: 568px)
+    {
+      margin: -30px 0 -40px 0;
+
+      ul
+      {
+        li
+        {
+          margin: 25px 0 0 0;
+
+          a
+          {
+            color: $main-color;
+
+            &:hover, &:focus
+            {
+              text-decoration: none;
+              background: transparent url('../../../app/images/nav-hover.png') center top no-repeat 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+ul.own-list
+{
+  font-family: sans-serif;
+  padding: 30px 0;
+
+  @media(min-width: 1200px)
+  {
+    ul
+    {
+      display: inline-block;
+
+      li
+      {
+        list-style-type: none;
+        margin: 0 87px 23px 0;
+
+        span
+        {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    ul.list-four
+    {
+      li
+      {
+        margin: 0 32px 23px 0;
+      }
+    }
+  }
+
+  @media(max-width: 1200px)
+  {
+
+    ul
+    {
+      margin: 0;
+      padding: 0;
+
+      li
+      {
+        list-style-type: none;
+        margin: 0 0 23px;
+
+        span
+        {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    ul.list-four
+    {
+      li
+      {
+        margin: 0 0 23px;
+      }
+    }
+  }
+}
+
+.separation-line
+{
+  background: url('../../../app/images/line.png') center top no-repeat;
+  margin: 68px 0;
+  padding: 1px 0 0;
+}
