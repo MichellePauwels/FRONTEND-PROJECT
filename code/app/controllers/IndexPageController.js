@@ -2,7 +2,7 @@
 {
   "use strict";
 
-  var IndexPageController = function($scope, $location) //alle params hier ook beneden schrijven
+  var IndexPageController = function($scope, $location)
   {
     $scope.$on('$locationChangeStart', function(event, next, current)
     {
@@ -25,6 +25,6 @@
     return this.charAt(0).toUpperCase() + this.slice(1);
   };
 
-  angular.module("app").controller("IndexPageController", ["$scope", "$location", IndexPageController]); //$http is een get/post/put/delete uit te voeren, om de zoveel tijd iets ophalen
+  angular.module("app").controller("IndexPageController", ["$scope", "$location", IndexPageController]);
 
 })();

@@ -1,9 +1,6 @@
 @import "variables.scss";
 @import "mixins.scss";
 
-//@include font-face(Jaldi, fonts/Jaldi-Regular);
-//@include font-face(Gill-sans, fonts/GillSans);
-
 //768, 736, 667, 568
 
 /* GENERAL ELEMENTS */
@@ -112,25 +109,25 @@ body
 {
   iframe
   {
-    @media(min-width: 736px)
+    @media screen and (min-width: 736px)
     {
       margin: -200px 0 80px 0;
     }
 
-    @media(max-width: 736px)
+    @media screen and (max-width: 736px)
     {
       margin: -100px 0 80px 0;
     }
 
     border: solid 7px $border-color;
 
-    @media(min-width: 736px)
+    @media screen and (min-width: 736px)
     {
       width: 720px;
       height: 404px;
     }
 
-    @media(max-width: 736px)
+    @media screen and (max-width: 736px)
     {
       width: 367px;
       height: 206px;
@@ -148,12 +145,12 @@ body
 {
   background: url('../../../app/images/header-pattern.jpg') center top repeat;
 
-  @media(min-width: 736px)
+  @media screen and (min-width: 736px)
   {
     padding: 20px 0 330px 0;
   }
 
-  @media(max-width: 736px)
+  @media screen and (max-width: 736px)
   {
     padding: 20px 0 160px 0;
   }
@@ -164,7 +161,7 @@ body
     font-size: 20px;
 
     //regular screen
-    @media(min-width: 768px)
+    @media screen and (min-width: 768px)
     {
       ul
       {
@@ -189,7 +186,7 @@ body
     }
 
     //tablet screen
-    @media(min-width: 568px) and (max-width: 768px)
+    @media screen and (min-width: 568px) and (max-width: 768px)
     {
       ul
       {
@@ -215,7 +212,7 @@ body
     }
 
     //mobile screen
-    @media(max-width: 568px)
+    @media screen and (max-width: 568px)
     {
       ul
       {
@@ -243,12 +240,12 @@ body
 {
   img
   {
-    @media(max-width: 883px)
+    @media screen and (max-width: 883px)
     {
       visibility: hidden;
     }
 
-    @media(min-width: 883px)
+    @media screen and (min-width: 883px)
     {
       visibility: visible;
       margin: 25px 5px 600px -73px;
@@ -265,7 +262,7 @@ body
     font-family: "Jaldi-regular";
     font-size: 20px;
 
-    @media(min-width: 768px)
+    @media screen and (min-width: 768px)
     {
       margin: -30px 0 -100px 0;
 
@@ -291,7 +288,7 @@ body
       }
     }
 
-    @media(min-width: 568px) and (max-width: 768px)
+    @media screen and (min-width: 568px) and (max-width: 768px)
     {
       margin: -30px 0 -70px 0;
 
@@ -318,7 +315,7 @@ body
       }
     }
 
-    @media(max-width: 568px)
+    @media screen and (max-width: 568px)
     {
       margin: -30px 0 -40px 0;
 
@@ -349,7 +346,7 @@ ul.own-list
   font-family: sans-serif;
   padding: 30px 0;
 
-  @media(min-width: 1200px)
+  @media screen and (min-width: 1200px)
   {
     ul
     {
@@ -377,9 +374,8 @@ ul.own-list
     }
   }
 
-  @media(max-width: 1200px)
+  @media screen and (max-width: 1200px)
   {
-
     ul
     {
       margin: 0;

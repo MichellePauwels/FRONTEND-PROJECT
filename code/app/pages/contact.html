@@ -1,32 +1,37 @@
 <h2>Send us an email</h2>
 <p>If you have any questions, do not hesistate to contact us at <a href="mailto:info@cloudhub.be?Subject=CloudHub contact">info@cloudhub.be</a>.</p>
 <p>Or fill in this form with your question.</p>
-<form class="form-horizontal" role="form" action="post">
+
+<form action="#thankyou" class="form-horizontal" ng-submit="submitForm()" name="contactForm" novalidate>
     <legend>Ask us a question</legend>
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : contactForm.name.$invalid && !contactForm.name.$pristine }">
         <label class="control-label col-sm-2" for="name">Your name</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="name" placeholder="Enter name" required="">
+            <input type="text" class="form-control" id="name" ng-model="name" placeholder="Enter name" required>
+            <p ng-show="contactForm.name.$invalid && !contactForm.name.$pristine" class="help-block">You name is required</p>
         </div>
     </div>
 
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="email" required="">Your email</label>
+    <div class="form-group" ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine }">
+        <label class="control-label col-sm-2" for="email">Your email</label>
         <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" placeholder="Enter email" required="">
+            <input type="email" class="form-control" id="email" ng-model="email" placeholder="Enter email" required>
+            <p ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="help-block">You email is required</p>
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : contactForm.question.$invalid && !contactForm.question.$pristine }">
         <label class="control-label col-sm-2" for="question">Your question</label>
         <div class="col-sm-10">
-            <textarea name="question" id="question" class="form-control" rows="5" placeholder="Enter question" required=""></textarea>
+            <textarea ng-model="question" name="question" id="question" class="form-control" rows="5" placeholder="Enter question" required></textarea>
+            <p ng-show="contactForm.question.$invalid && !contactForm.question.$pristine" class="help-block">You question is required</p>
+            <span ng-show="myForm.email.$error.email">Invalid email address.</span>
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-sm-offset-10 col-sm-2">
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button ng-disabled="contactForm.$invalid" type="submit" id="submitButton" class="btn btn-default">Submit</button>
         </div>
     </div>
 </form>

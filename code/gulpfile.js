@@ -28,7 +28,7 @@ gulp.task("default", function()
 gulp.task("css-build", function()
 {
   gulp.src("./app/styles/*.scss")
-  //.pipe(scsslint({ "IdSelector" : enable })) zelf schrijven ojee
+  //.pipe(scsslint({ "IdSelector" : enable })) zelf schrijven
   .pipe(scsslint()) //eerst scss
   .pipe(sass())
   .pipe(scsslint.failReporter("E"))
@@ -38,12 +38,11 @@ gulp.task("css-build", function()
   .pipe(concat("app.min.css"))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest("./app/compiled/css"))
-  //.pipe(notify({ message: "css-build" }))
 });
 
 gulp.task("js-build", function()
 {
-  gulp.src(["./app/*.js", "./app/controllers/*.js", "./app/scripts/*.js"]) //["", ""]
+  gulp.src(["./app/*.js", "./app/controllers/*.js"]) //["", ""]
   .pipe(jshint())
   .pipe(jshint.reporter(jsStyLish))
   .pipe(sourcemaps.init())
@@ -51,5 +50,4 @@ gulp.task("js-build", function()
   //.pipe(uglify())
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('./app/compiled/js'))
-  //.pipe(notify({message: 'js-build'}))
 });

@@ -4,7 +4,7 @@
 
   var app = angular.module("app", ["ngRoute"]);
 
-  app.config(function($routeProvider) //$ toont aan dat het een angular var is
+  app.config(function($routeProvider)
     {
       $routeProvider.when("/home",
                     {
@@ -14,7 +14,6 @@
                     .when("/about",
                     {
                         templateUrl: "pages/about.html"
-                        //controller: "imagesDetailsController"
                     })
                     .when("/products",
                     {
@@ -22,8 +21,14 @@
                     })
                     .when("/contact",
                     {
-                      templateUrl: "pages/contact.html"
+                      templateUrl: "pages/contact.html",
+                        controller: "FormController"
                     })
+                      .when("/thankyou",
+                      {
+                          templateUrl: "pages/thankyou.html",
+                          controller: "FormController"
+                      })
                     .otherwise(
                     {
                       redirectTo: "/home"

@@ -1,39 +1,23 @@
 <!DOCTYPE html>
 <html ng-app="app">
-  <head>
-    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="images/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+<head>
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="screen" charset="utf-8"> -->
+  <link rel='stylesheet' href='../lib/bootstrap/css/bootstrap.min.css' media='screen' charset='utf-8'>
+  <link rel="stylesheet" href="compiled/css/app.min.css" charset="utf-8">
 
-    <meta charset="utf-8">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="screen" charset="utf-8"> -->
-    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css" media="screen" charset="utf-8">
-    <link rel="stylesheet" href="compiled/css/app.min.css" charset="utf-8">
+  <title ng-controller="IndexPageController">CloudHub - {{title}}</title>
+</head>
 
-    <title ng-controller="IndexPageController">{{title}}</title>
-  </head>
-  <body>
+<body>
   <div ng-controller="IndexPageController" class={{classHeader}}>
     <nav class="navbar" ng-controller="IndexPageController">
       <div class="container">
         <div class="navbar-header">
-          <a ng-hide="showHomeHeader" class="navbar-brand" href="#home"><img src="images/cloudhub.png" alt="Cloudhub Logo Mini"/></a>
+          <a ng-hide="showHomeHeader" class="navbar-brand" href="#home"><img title="CloudHub Logo" src="images/cloudhub.png" alt="CloudHub Logo Mini"/></a>
         </div>
-
         <ul class="nav navbar-nav">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -41,14 +25,13 @@
           <li><a href="#contact">Contact</a></li>
           <li><a href="http://www.cloudhub.be/">Cloudplatform</a></li>
         </ul>
-
       </div>
     </nav>
 
     <div class="container">
       <header ng-controller="IndexPageController">
         <div ng-show="showHomeHeader">
-          <h2>Cloudhub</h2>
+          <h2>CloudHub</h2>
           <p>Afforable, customizable and manageable thin clients.</p>
           <a class="btn btn-default" href="#about">Download our folder</a>
           <a class="btn btn-default" href="#products">Discover our product</a>
@@ -60,7 +43,6 @@
   <main>
     <h1 ng-controller="IndexPageController" ng-hide="showHomeHeader">{{title}}</h1>
     <div ng-view class="container">
-
     </div>
   </main>
 
@@ -69,15 +51,16 @@
       a bachelor at Howest Kortrijk, and fully made by Esli Heyvaert, Michelle Pauwels, Jens Gellynck and Christophe Vanassche.</footer>
   </div>
 
-    <!-- scripts -->
-    <script src="../lib/angular/angular.js"></script> <!-- deze en de onderste niet concateneren -->
-    <script src="../lib/angular/angular-route.js"></script>
-
-    <script src="compiled/js/app.min.js"></script>
-
-   <!--  <script src="app.js"></script>
-    <script src="controllers/IndexPageController.js"></script>
-    <script src="scripts/main.js"></script> -->
-    <!-- end of scripts -->
-  </body>
+  <!-- scripts -->
+  <script src="../lib/angular/angular.js"></script>
+  <script src="../lib/angular/angular-route.js"></script>
+  <script src="../lib/email/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("user_VnMPzGUSxJp2kEPQBwY6C");
+    })();
+  </script>
+  <script src="compiled/js/app.min.js"></script>
+  <!-- end of scripts -->
+</body>
 </html>
