@@ -27,7 +27,10 @@
                       .when("/thankyou",
                       {
                           templateUrl: "pages/thankyou.html",
-                          controller: "FormController"
+                      })
+                      .when("/error",
+                      {
+                          templateUrl: "pages/error.html",
                       })
                     .otherwise(
                     {
